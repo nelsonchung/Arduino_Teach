@@ -2,6 +2,7 @@ const int BLUE_LED = 12;
 const int GREEN_LED = 8;
 const int RED_LED = 13;
 const int MOTOR_ENABLE_PIN = 7;
+const int MOTOR_ENABLE_PIN_2 = 4;
 
 void setup() {
   // put your setup code here, to run once:
@@ -9,6 +10,7 @@ void setup() {
   pinMode(GREEN_LED, OUTPUT);
   pinMode(RED_LED, OUTPUT);
   pinMode(MOTOR_ENABLE_PIN, OUTPUT);
+  pinMode(MOTOR_ENABLE_PIN_2, OUTPUT);
 }
 
 void loop() {
@@ -26,7 +28,9 @@ void loop() {
   digitalWrite(GREEN_LED, LOW);
   delay(1000);
   digitalWrite(MOTOR_ENABLE_PIN, HIGH);
+  digitalWrite(MOTOR_ENABLE_PIN_2, HIGH);
   delay(5000);
   digitalWrite(MOTOR_ENABLE_PIN, LOW);
-  delay(5000);
+  digitalWrite(MOTOR_ENABLE_PIN_2, LOW);
+  delay(2000);
 }
