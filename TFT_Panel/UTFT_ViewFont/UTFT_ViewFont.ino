@@ -9,7 +9,7 @@
 // This program requires the UTFT library.
 //
 
-#include "UTFT.h"
+#include <UTFT.h>
 
 // Declare which fonts we will be using
 extern uint8_t SmallFont[];
