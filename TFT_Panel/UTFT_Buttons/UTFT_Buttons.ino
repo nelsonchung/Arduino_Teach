@@ -1,4 +1,4 @@
-// UTFT_Buttons_Demo_320x240 (C)2013 Henning Karlsen
+/// UTFT_Buttons_Demo_320x240 (C)2013 Henning Karlsen
 // web: http://www.henningkarlsen.com/electronics
 //
 // A small demo to demonstrate the use of some of the
@@ -12,9 +12,9 @@
 // in addition to the UTFT_Buttons add-on library.
 //
 
-#include "UTFT.h"
-#include "UTouch.h"
-#include "UTFT_Buttons.h"
+#include <UTFT.h>
+#include <UTouch.h>
+#include <UTFT_Buttons.h>
 
 // Declare which fonts we will be using
 extern uint8_t SmallFont[];
