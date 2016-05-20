@@ -13,8 +13,8 @@
 //
 
 #include "UTFT.h"
-#include <UTouch.h>
-#include <UTFT_Buttons.h>
+#include "UTouch.h"
+#include "UTFT_Buttons.h"
 
 // Declare which fonts we will be using
 extern uint8_t SmallFont[];
