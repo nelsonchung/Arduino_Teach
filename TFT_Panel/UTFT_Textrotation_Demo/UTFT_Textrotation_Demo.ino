@@ -1,7 +1,7 @@
-// UTFT_ViewFont (C)2014 Henning Karlsen
+// UTFT_Textrotation_Demo (C)2014 Henning Karlsen
 // web: http://www.henningkarlsen.com/electronics
 //
-// This program is a demo of the included fonts.
+// This program is a demo of the textrotation-functions.
 //
 // This demo was made for modules with a screen resolution 
 // of 320x240 pixels.
@@ -12,7 +12,6 @@
 #include <UTFT.h>
 
 // Declare which fonts we will be using
-extern uint8_t SmallFont[];
 extern uint8_t BigFont[];
 extern uint8_t SevenSegNumFont[];
 
@@ -34,40 +33,26 @@ UTFT myGLCD(HX8357C,38,39,40,41);
 void setup()
 {
   myGLCD.InitLCD();
+  //myGLCD.InitLCD();
   myGLCD.clrScr();
+  myGLCD.setFont(BigFont);
 }
 
 void loop()
 {
-  static char i=1;
-  myGLCD.clrScr();
-  if(i==1)
-  myGLCD.setColor(255, 0, 0);  
-  else if(i==2)
-  myGLCD.setColor(0, 255, 0);
-  else if(i==3)
-  {
-  myGLCD.setColor(0, 0, 255);
-  i=0;
-  }
-  i++;
-  myGLCD.setBackColor(0, 0, 0);
-  myGLCD.setFont(BigFont);
-  myGLCD.print(" !\"#$%&'()*+,-./", CENTER, 0);
-  myGLCD.print("0123456789:;<=>?", CENTER, 16);
-  myGLCD.print("@ABCDEFGHIJKLMNO", CENTER, 32);
-  myGLCD.print("PQRSTUVWXYZ[\\]^_", CENTER, 48);
-  myGLCD.print("`abcdefghijklmno", CENTER, 64);
-  myGLCD.print("pqrstuvwxyz{|}~ ", CENTER, 80);
+    myGLCD.print("Text rotation", 0, 0);
+    myGLCD.setColor(0, 0, 255);
+    myGLCD.print("0 degrees", 0, 16, 0);
+    myGLCD.print("90 degrees", 319, 0, 90);
+    myGLCD.print("180 degrees", 319, 239, 180);
+    myGLCD.print("270 degrees", 0, 239, 270);
 
-  myGLCD.setFont(SmallFont);
-  myGLCD.print(" !\"#$%&'()*+,-./0123456789:;<=>?", CENTER, 120);
-  myGLCD.print("@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_", CENTER, 132);
-  myGLCD.print("`abcdefghijklmnopqrstuvwxyz{|}~ ", CENTER, 144);
+    myGLCD.setFont(SevenSegNumFont);
+    myGLCD.setColor(0, 255, 0);
+    myGLCD.print("45", 90, 100, 45);
+    myGLCD.print("90", 200, 50, 90);
+    myGLCD.print("180", 300, 200, 180);
 
-  myGLCD.setFont(SevenSegNumFont);
-  myGLCD.print("0123456789", CENTER, 190);
-  delay(1000);
-  //while(1) {};
+  while (true) {};
 }
 
