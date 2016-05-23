@@ -1,3 +1,4 @@
+    /*Reference from: http://ming-shian.blogspot.tw/2014/05/arduino19dht11.html*/
 
     #include <dht.h>   
       
