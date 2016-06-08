@@ -13,9 +13,9 @@ ls $HOME/arduino-1.6.9
 arduino  arduino-builder  dist  examples  hardware  install.sh  java  lib  libraries  reference  revisions.txt  tools  tools-builder  uninstall.sh
 *********************************
 
-cp -ar libraries\UTFT $HOME/arduino-1.6.9/libraries/
+cp -ar UTFT $HOME/arduino-1.6.9/libraries/
 
-cp -ar libraries\UTFT_Buttons $HOME/arduino-1.6.9/libraries/
+cp -ar UTFT_Buttons $HOME/arduino-1.6.9/libraries/
 
-cp -ar libraries\UTouch $HOME/arduino-1.6.9/libraries/
+cp -ar UTouch $HOME/arduino-1.6.9/libraries/
 
