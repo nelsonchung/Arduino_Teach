@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Map For Timer Library
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Led13Flash	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+start	KEYWORD2
+stop	KEYWORD2
+update	KEYWORD2
+setlednumber	KEYWORD2
+setdelaytime	KEYWORD2
+settwinkletime	KEYWORD2
+
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
