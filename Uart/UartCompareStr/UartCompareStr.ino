@@ -14,6 +14,7 @@
  */
 
 int incomingByte = 0;   // for incoming serial data
+char data[21];
 
 void setup() {
     // put your setup code here, to run once:
@@ -31,24 +32,25 @@ void loop() {
     if ( Serial.available() > 0 ){
         incomingByte = Serial.read();
         Serial.print("I recevied: ");
-        Serial1.print(incomingByte, HEX);
-        Serial1.print("\n");
+        Serial.print(incomingByte, HEX);
+        Serial.print("\n");
     }
 
     //一次針對三個Serial1, 2, 3都使用available偵測是否有資料進來，如果有，就用write的方式，將讀到的值寫回去。
-    if ( Serial1.available() > 0 ){
-        incomingByte = Serial1.read();
-        Serial1.write(incomingByte);
-    }
+    //用Serial1好像會怪怪的
+    while ( Serial2.available() > 0 ){
+        //int number_of_bytes_received = Serial2.readBytesUntil (13,data,20);
+        int number_of_bytes_received = Serial2.readBytesUntil ('0',data,20);
+        data[number_of_bytes_received]=0;
+        bool result = strcmp (data, "IamNelson");
+        if (result == 0)
+        {
+            Serial2.write("ok\n");
+        } 
+        else 
+        {
+            Serial2.write("not ok\n");
+        }
 
-    if ( Serial2.available() > 0 ){
-        incomingByte = Serial2.read();
-        Serial2.write(incomingByte);
-    }
-
-    //Serial3.print("test"); //no any write to NB
-    if ( Serial3.available() > 0 ){
-        incomingByte = Serial3.read();
-        Serial3.write(incomingByte);
     }
 }
